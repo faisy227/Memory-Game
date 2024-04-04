@@ -88,6 +88,7 @@ const timeGenerator = () =>{
     
 };
 let moveHeading = document.createElement('span');
+
 const movesCounter = () => {
     moveHeading.textContent = `Moves: ${movesCount}`;
     movesCount += 1;
@@ -204,16 +205,7 @@ const matrixGenerator = (cardValues, size = 4) =>{
     });
 };
 
-// Initialize values and func calls
-const initializer = () =>{
-    result.innerText = "";
-    winCount = 0;
-    let cardValues = generateRandom();
-    console.log(cardValues);
-    matrixGenerator(cardValues); 
-}
 
-initializer();
 
 // startGame
 startButton.addEventListener('click', ()=>{
@@ -244,3 +236,14 @@ stopButton.addEventListener( "click", (stopGame = () => {
       clearInterval(interval);
     })
   );
+
+  // Initialize values and func calls
+const initializer = () =>{
+    result.innerText = "";
+    winCount = 0;
+    let cardValues = generateRandom();
+    console.log(cardValues);
+    matrixGenerator(cardValues); 
+}
+
+initializer();
